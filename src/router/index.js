@@ -43,7 +43,7 @@ export default new Router({
           name: 'login',
           path: 'login',
           component: lazyLoading('auth/login/Login'),
-        },
+      },
         {
           name: 'signup',
           path: 'signup',

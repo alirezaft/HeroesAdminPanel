@@ -1,22 +1,23 @@
 <template>
   <div class="login">
     <h2>{{ $t('auth.welcome') }}</h2>
-    <form method="post" action="/auth/login" name="login">
+    <form method="post" action="http://193.176.243.42:3111/auth" name="login" id="LoginForm">
       <div class="form-group">
         <div class="input-group">
-          <input type="text" id="email" required="required">
-          <label class="control-label" for="email">{{ $t('auth.email') }}</label>
+          <input type="text" id="User" name="User" required="required">
+          <label class="control-label" for="User">{{ $t('auth.email') }}</label>
           <i class="bar"/>
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
-          <input type="password" id="password" required="required">
-          <label class="control-label" for="password">{{ $t('auth.password') }}</label>
+          <input type="password" id="Pass" name="Pwd" required="required">
+          <label class="control-label" for="Pass">{{ $t('auth.password') }}</label>
           <i class="bar"/>
         </div>
       </div>
       <div class="justify--space-between">
+        <!-- <router-link class='btn btn-primary' type='submit' to="">{{$t('auth.login')}}</router-link> -->
         <button class="btn btn-primary" type="submit">{{ $t('auth.login') }}</button>
         <!--router-link class='link flex-center pl-2 text-center' :to="{name: 'signup'}">
           {{ $t('auth.createAccount') }}
@@ -30,6 +31,8 @@
 export default {
   name: "login"
 };
+
+//Vue.http.options.emulateJSON = true;
 </script>
 
 <style lang="scss">
