@@ -1,38 +1,81 @@
 <template>
   <div class="login">
     <h2>{{ $t('auth.welcome') }}</h2>
-    <form method="post" action="http://193.176.243.42:3111/auth" name="login" id="LoginForm">
+    <form name="login" id="LoginForm">
       <div class="form-group">
         <div class="input-group">
-          <input type="text" id="User" name="User" required="required">
-          <label class="control-label" for="User">{{ $t('auth.email') }}</label>
+          <input type="text" id="User" name="username" required="required" v-model="Username" value="">
+          <label class="control-label" for="User">{{ $t('Username') }}</label>
           <i class="bar"/>
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
-          <input type="password" id="Pass" name="Pwd" required="required">
+          <input type="password" id="Pass" name="password" required="required" v-model="Password" value="">
           <label class="control-label" for="Pass">{{ $t('auth.password') }}</label>
+          <!--button @click.stop.prevent="togglepassmode()">SHOW</button-->
           <i class="bar"/>
         </div>
       </div>
       <div class="justify--space-between">
-        <!-- <router-link class='btn btn-primary' type='submit' to="">{{$t('auth.login')}}</router-link> -->
-        <button class="btn btn-primary" type="submit">{{ $t('auth.login') }}</button>
-        <!--router-link class='link flex-center pl-2 text-center' :to="{name: 'signup'}">
-          {{ $t('auth.createAccount') }}
-        </router-link-->
+        <button class="btn btn-primary" @click.stop.prevent="validateUser()">{{ $t('auth.login') }}</button>
       </div>
+
     </form>
+    <vuestic-danger type="danger" :withCloseBtn="true" id="authfailalert" hidden>
+      <span class="badge badge-pill badge-danger">Error</span>
+        Username or password is incorrect. Please try again.
+    </vuestic-danger>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: "login"
-};
+  name: 'login',
 
-//Vue.http.options.emulateJSON = true;
+  data: function () {
+    return {
+      Username: '',
+      Password: ''
+    }
+  },
+
+  methods: {
+    showAlert () {
+      document.getElementById('authfailalert').removeAttribute('hidden')
+      // Can be replaced with toast
+    },
+
+    /* togglepassmode(){
+      var currentMode = document.getElementById("Pass").getAttribute("type");
+
+      if(currentMode == "password"){
+        document.getElementById("Pass").setAttribute("type", "text");
+      }else{
+        document.getElementById("Pass").setAttribute("type", "password");
+      }
+    }, */
+
+    validateUser () {
+      axios.post('http://193.176.243.42:254/auth', {
+        username: this.Username,
+        password: this.Password
+      })
+        .then((response) => {
+          const token = response.data.token
+          this.$cookie.set('LoginToken', token, { expires: '5m' })
+          console.log(this.$cookie.get('LoginToken'))
+          this.$router.push({ name: 'dashboard' })
+        }).catch((error) => {
+          if (error.response.status === 401) {
+            alert('Username or password is incorrect.')
+          }
+        })
+    }
+  }
+}
+
 </script>
 
 <style lang="scss">
