@@ -1,6 +1,6 @@
 export const breadcrumbs = {
   root: {
-    name: '/',
+    name: '/admin/dashboard',
     displayName: 'Home',
   },
   routes: [
@@ -8,6 +8,21 @@ export const breadcrumbs = {
       name: 'dashboard',
       displayName: 'menu.dashboard',
     },
+    
+    {
+      name: 'Queries',
+      displayName: 'Queries',
+      children:[
+        {
+          name: 'Users',
+          displayName: 'Users'
+        }, {
+          name: 'Clans',
+          displayName: 'Clans'
+        }
+      ]
+    },
+
     {
       name: 'statistics',
       displayName: 'menu.statistics',

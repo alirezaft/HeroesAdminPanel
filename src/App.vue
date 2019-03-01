@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Users from './components/Queries/Users.vue'
 export default {
   name: 'app'
 }

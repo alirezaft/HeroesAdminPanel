@@ -31,9 +31,10 @@ const EmptyParentComponent = {
 export default new Router({
   routes: [
     ...demoRoutes,
+    
     {
-      path: '*',
-      redirect: { name: 'login' },
+      path: '/',
+      redirect: {name: 'login'}
     },
     {
       path: '/auth',
@@ -86,6 +87,22 @@ export default new Router({
       path: '/admin',
       component: AppLayout,
       children: [
+        {
+          name: 'Queries',
+          path: 'queries',
+          component: EmptyParentComponent,
+          children:[
+            {
+              name: 'Users',
+              path: 'users',
+              component: lazyLoading('Queries/Users')
+            }, {
+              name: 'Clans',
+              path: 'queries/clans',
+              component: lazyLoading('Queries/Clans')
+            }
+          ]
+        },
         {
           name: 'dashboard',
           path: 'dashboard',

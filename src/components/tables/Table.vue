@@ -234,6 +234,9 @@ export default {
       queryParams: QueryParams,
     }
   },
+  mounted(){
+    console.log('User component loaded')
+  }
 }
 </script>
 

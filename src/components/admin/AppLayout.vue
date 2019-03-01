@@ -16,7 +16,7 @@
       <router-view/>
     </main>
     <span slot="footer">
-      ©2018. Made by&nbsp;<a href="https://epicmax.co" target="_blank"> Epicmax</a>
+      ©2018. Made by&nbsp;<a href="https://epicmax.co" target="_blank"> Alirezaft</a>
     </span>
   </vuestic-layout>
 </template>

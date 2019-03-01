@@ -7,21 +7,25 @@ import 'babel-polyfill'
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 import App from './App'
+// import VueRouter from 'vue-router';
 import store from './store'
 import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
+// import Axios from 'axios'
 
 const VueCookie = require('vue-cookie')
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
 Vue.use(VueCookie)
-
+// Vue.use(VueRouter);
+// Vue.use(Axios)
+// let vrouter = new VueRouter({mode:})
 // NOTE: workaround for VeeValidate + vuetable-2
 Vue.use(VeeValidate, { fieldsBagName: 'formFields' })
-
+// Vue.component('Users')
 router.beforeEach((to, from, next) => {
   store.commit('setLoading', true)
   next()

@@ -11,9 +11,9 @@
     <message-dropdown class="col nav-item"/>
     <notification-dropdown class="col nav-item"/>
     <language-dropdown class="col nav-item"/>
-    <profile-dropdown class="col nav-item">
+    <!--profile-dropdown class="col nav-item">
       <img src="https://i.imgur.com/nfa5itq.png"/>
-    </profile-dropdown>
+    </profile-dropdown-->
   </vuestic-navbar>
 
 </template>

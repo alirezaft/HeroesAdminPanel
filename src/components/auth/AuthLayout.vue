@@ -15,7 +15,10 @@
         <div class="flex-center">
           <div class="auth-layout__auth-wallpaper__cross-line"/>
           <router-link class="auth-layout__auth-wallpaper__logo" :to="{path: '/'}">
-            <vuestic-icon-vuestic/>
+            <div class="title0">
+              <p class="t1">Heroes</p>
+              <p class="t2">Admin Panel</p>
+            </div>
           </router-link>
         </div>
       </div>
@@ -50,9 +53,26 @@ export default {
       height: $auth-wallpaper-ivuestic-h;
       width: 100%;
     }
-    .vuestic-icon-vuestic {
+    .title0 {
       height: $auth-wallpaper-ivuestic-h;
-      width: 100%;
+      width: 50%;
+      margin : auto;
+      
+
+      .t1{
+        font-size: 28pt;
+        // align-self: center;
+        // right : 50%
+        text-align: center;
+        font-family: sans-serif;
+        }
+
+      .t2{
+        font-size : 20pt;
+        text-align: center;
+        letter-spacing: 5px;
+        font-family: sans-serif;
+      }
     }
 
     &__cross-line {
@@ -72,7 +92,7 @@ export default {
     justify-content: center;
     height: $top-mobile-nav-height;
     background-color: $top-nav-bg;
-    .vuestic-icon-vuestic {
+    .title {
       height: $auth-mobile-nav-ivuestic-h;
       width: 100%;
     }
