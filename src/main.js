@@ -13,6 +13,7 @@ import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
+import VueKonva from 'vue-konva'
 // import Axios from 'axios'
 
 const VueCookie = require('vue-cookie')
@@ -20,6 +21,7 @@ const VueCookie = require('vue-cookie')
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
 Vue.use(VueCookie)
+Vue.use(VueKonva)
 // Vue.use(VueRouter);
 // Vue.use(Axios)
 // let vrouter = new VueRouter({mode:})

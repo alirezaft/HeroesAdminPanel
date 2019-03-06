@@ -22,6 +22,10 @@ export const breadcrumbs = {
         }
       ]
     },
+    {
+      name: 'Matches',
+      displayName: 'Matches'
+    },
 
     {
       name: 'statistics',

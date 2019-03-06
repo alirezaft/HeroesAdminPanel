@@ -98,7 +98,7 @@ export default new Router({
               component: lazyLoading('Queries/Users')
             }, {
               name: 'Clans',
-              path: 'queries/clans',
+              path: 'clans',
               component: lazyLoading('Queries/Clans')
             }
           ]
@@ -108,6 +108,11 @@ export default new Router({
           path: 'dashboard',
           component: lazyLoading('dashboard/Dashboard'),
           default: true,
+        },
+        {
+          name: 'Matches',
+          path: 'matches',
+          component: lazyLoading('MatchViewer/Matches')
         },
         {
           name: 'statistics',

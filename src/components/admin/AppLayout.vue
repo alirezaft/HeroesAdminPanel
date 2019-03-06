@@ -16,7 +16,7 @@
       <router-view/>
     </main>
     <span slot="footer">
-      ©2018. Made by&nbsp;<a href="https://epicmax.co" target="_blank"> Alirezaft</a>
+      ©2019. Made by Alirezaft
     </span>
   </vuestic-layout>
 </template>
@@ -43,7 +43,7 @@ export default {
   },
   data () {
     return {
-      opened: true,
+      opened: false,
     }
   },
   methods: {
@@ -56,5 +56,11 @@ export default {
       'isLoading',
     ]),
   },
+  mounted(){
+    if(this.$cookie.get('LoginToken') == undefined){
+      this.$router.replace({name : 'login'})
+    }
+    
+  }
 }
 </script>

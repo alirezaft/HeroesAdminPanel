@@ -17,6 +17,11 @@
           </span>
         </sidebar-link>
       </sidebar-link-group>
+      <sidebar-link :to="{name: 'Matches'}">
+        <span slot="title">
+          <span>Matches</span>
+        </span>
+      </sidebar-link>
     </template>
   </vuestic-sidebar>
 </template>
