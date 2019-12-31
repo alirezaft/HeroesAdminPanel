@@ -1,7 +1,7 @@
-#Heroes Game Control Panel
+# Heroes Game Control Panel
 This is a control panel developed to control an online indie game for android called Heroes. The development of game has been stopped and this control panel is NOT complete. Some functionalities may not work due to reliance on server. It is a representation of the progress of our game development.
 It's developed using Vue.js and [Vuestic-admin control panel template.](https://github.com/epicmaxco/vuestic-admin)
-##Installation
+## Installation
 ```
 #clone the repository
 git clone https://github.com/alirezaft/HeroesAdminPanel.git mydir
