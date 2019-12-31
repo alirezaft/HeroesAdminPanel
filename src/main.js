@@ -15,13 +15,14 @@ import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
 import VueKonva from 'vue-konva'
 // import Axios from 'axios'
-
+// import VueChart from 'vue-chartjs'
 const VueCookie = require('vue-cookie')
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)
 Vue.use(VueCookie)
 Vue.use(VueKonva)
+// Vue.use(VueChart)
 // Vue.use(VueRouter);
 // Vue.use(Axios)
 // let vrouter = new VueRouter({mode:})

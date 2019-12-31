@@ -2,7 +2,7 @@
   <vuestic-navbar>
     <header-selector slot="selector" :isOpen.sync="valueProxy"/>
     <span slot="logo">
-      <p>Admin Control Panel</p>
+      <p>Heroes Control Panel</p>
     </span>
 
     <message-dropdown class="col nav-item"/>

@@ -68,7 +68,7 @@
       </div>
     </vuestic-modal>
     <vuestic-modal :show.sync="show"
-                   v-bind:small="true" v-bind:force="true" ref="staticModal"
+                   v-bind:small="true" v-bind:force="true" ref="nu"
                    :cancelClass="'none'"
                    :okText="'modal.close' | translate">
       <div slot="title">{{'modal.staticTitle' | translate}}</div>

@@ -4,6 +4,8 @@ import AppLayout from '../components/admin/AppLayout'
 import AuthLayout from '../components/auth/AuthLayout'
 import lazyLoading from './lazyLoading'
 
+import ActionViewer from '../components/Queries/ActionViewer'
+
 Vue.use(Router)
 
 const demoRoutes = []
@@ -31,10 +33,10 @@ const EmptyParentComponent = {
 export default new Router({
   routes: [
     ...demoRoutes,
-    
+
     {
       path: '/',
-      redirect: {name: 'login'}
+      redirect: { name: 'login' }
     },
     {
       path: '/auth',
@@ -44,7 +46,7 @@ export default new Router({
           name: 'login',
           path: 'login',
           component: lazyLoading('auth/login/Login'),
-      },
+        },
         {
           name: 'signup',
           path: 'signup',
@@ -91,7 +93,7 @@ export default new Router({
           name: 'Queries',
           path: 'queries',
           component: EmptyParentComponent,
-          children:[
+          children: [
             {
               name: 'Users',
               path: 'users',
@@ -112,7 +114,19 @@ export default new Router({
         {
           name: 'Matches',
           path: 'matches',
-          component: lazyLoading('MatchViewer/Matches')
+          component: lazyLoading('Queries/Matches'),
+          children: [
+            {
+              name: 'ActionViewer',
+              path: ':MatchId',
+              component: lazyLoading('Queries/ActionViewer')
+            }
+          ]
+        },
+        {
+          name: 'UploadMap',
+          path: 'uploadmap',
+          component: lazyLoading('MapUpload/MapUpload')
         },
         {
           name: 'statistics',

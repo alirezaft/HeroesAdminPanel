@@ -8,11 +8,11 @@ export const breadcrumbs = {
       name: 'dashboard',
       displayName: 'menu.dashboard',
     },
-    
+
     {
       name: 'Queries',
       displayName: 'Queries',
-      children:[
+      children: [
         {
           name: 'Users',
           displayName: 'Users'
@@ -24,9 +24,18 @@ export const breadcrumbs = {
     },
     {
       name: 'Matches',
-      displayName: 'Matches'
+      displayName: 'Matches',
+      children: [
+        {
+          name: 'ActionViewer',
+          displayName: 'Action viewer'
+        },
+      ]
     },
-
+    {
+      name: 'UploadMap',
+      displayName: 'Upload map'
+    },
     {
       name: 'statistics',
       displayName: 'menu.statistics',

@@ -4,4 +4,7 @@ import { chartMixin } from './chartMixin'
 export default {
   extends: Line,
   mixins: [chartMixin],
+  // Update(){
+  //   Line.update();
+  // }
 }
