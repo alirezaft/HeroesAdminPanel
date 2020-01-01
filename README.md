@@ -35,3 +35,4 @@ $ yarn build
 # build for production and view the bundle analyzer report.
 $ yarn build --report
 ```
+NOTE: In oreder to disable login work with the `WithoutLogin` branch

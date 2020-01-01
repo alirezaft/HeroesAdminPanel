@@ -59,7 +59,7 @@ export default {
     },
 
     validateUser () {
-      if (this.Username === '' || this.Password === '') {
+      /*if (this.Username === '' || this.Password === '') {
         this.showEmptyFieldAlert()
       } else {
         axios.post(Global.CP_BACK_DB_ADDR + '/auth', {
@@ -84,7 +84,8 @@ export default {
               alert('Server is unreachable. try again later.')
             }
           })
-      }
+      }*/
+      this.$router.push({ name: 'dashboard' })
     },
 
     togglepassmode () {

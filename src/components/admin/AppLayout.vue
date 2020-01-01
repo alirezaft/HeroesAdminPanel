@@ -57,9 +57,9 @@ export default {
     ]),
   },
   mounted(){
-    if(this.$cookie.get('LoginToken') == undefined){
+    /*if(this.$cookie.get('LoginToken') == undefined){
       this.$router.replace({name : 'login'})
-    }
+    }*/
     
   }
 }
